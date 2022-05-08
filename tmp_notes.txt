@@ -1,0 +1,33 @@
+Using index info to reconstruct a base tree...
+Falling back to patching base and 3-way merge...
+Auto-merging Gemfile.lock
+CONFLICT (add/add): Merge conflict in Gemfile.lock
+Auto-merging Gemfile
+CONFLICT (add/add): Merge conflict in Gemfile
+error: Failed to merge in the changes.
+Patch failed at 0003 installed jekyll
+Use 'git am --show-current-patch' to see the failed patch
+
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+
+
+
+
+Applying: blog
+Applying: added _config.yml and _straetegies
+Using index info to reconstruct a base tree...
+Falling back to patching base and 3-way merge...
+Auto-merging _config.yml
+CONFLICT (add/add): Merge conflict in _config.yml
+error: Failed to merge in the changes.
+Patch failed at 0015 added _config.yml and _straetegies
+Use 'git am --show-current-patch' to see the failed patch
+
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+

@@ -1,6 +1,5 @@
 ---
 layout: default
-title: 'Test Coll'
 ---
 
 {% for pg in site.test_collections %}
@@ -13,3 +12,4 @@ title: 'Test Coll'
 {% endfor %}
 
 #permalink: /test_coll/
+#title: 'Test Coll'

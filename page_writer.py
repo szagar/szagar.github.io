@@ -1,3 +1,4 @@
+from pathlib import Path
 from plistlib import FMT_BINARY
 import typer
 from rich import print
@@ -130,22 +131,42 @@ def strategy_sheet_fn(strategy_name: str):
 
 
 def write_strategy_sheet(sheet_data):
-    fn = strategy_sheet_fn(sheet_data["strategy_name"])
+    fn = Path("_strategies") / strategy_sheet_fn(sheet_data["strategy_name"])
     with open(fn, "w") as fh:
-        fh.write("---")
+        fh.write("---\n")
         for k, v in sheet_data["front_matter"].items():
-            fh.write(f"{k:20}: {v}")
-        fh.write("---")
+            fh.write(f"{k:20}: {v}\n")
+        fh.write("---\n")
+
+        fh.write("equity_curve\n")
+        for k, v in sheet_data["equity_curve"].items():
+            fh.write("================\n")
+            fh.write(f"{k:20}: {v}<br>\n")
+
+        fh.write("cross_markets\n")
+        for cm in sheet_data["cross_markets"]:
+            for k, v in cm.items():
+                fh.write(f"{k:20}: {v}<br>\n")
+
+        fh.write("MAE\n")
+        for k, v in sheet_data["mae"].items():
+            fh.write(f"{k:20}: {v}<br>\n")
+
+        fh.write("MFE\n")
+        for k, v in sheet_data["mfe"].items():
+            fh.write(f"{k:20}: {v}<br>\n")
+
     return fh
 
 
 def write_static_page(page_data):
     page = "_strategies/new_page.md"
     with open(page, "w") as fh:
-        fh.write("---\n")
+        fh.write("---\n\n")
         for k, v in page_data["front_matter"].items():
             fh.write(f"{k}: '{v}'\n")
         fh.write("---\n\n")
+
         for l in page_data["content"]:
             fh.write(l + "\n")
 

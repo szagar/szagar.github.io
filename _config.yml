@@ -55,5 +55,7 @@ plugins:
 #   - vendor/ruby/
 
 collections:
+  test_collections:
+    output: true
   strategies:
     output: true

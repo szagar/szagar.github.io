@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 'Test Coll'
-permalink: /test_coll/
 ---
 
 {% for pg in site.test_collections %}
@@ -12,3 +11,5 @@ permalink: /test_coll/
   </h2>
   <p>{{ pg.content | markdownify }}</p>
 {% endfor %}
+
+#permalink: /test_coll/

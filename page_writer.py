@@ -138,15 +138,23 @@ def write_strategy_sheet(sheet_data):
             fh.write(f"{k:20}: {v}\n")
         fh.write("---\n")
 
-        fh.write("equity_curve\n")
+        fh.write("equity_curve<br>\n")
+        fh.write(
+            f"<img src='{sheet_data['equity_curve']['equity_curve_url']}' alt='' border=3 height=200>"
+        )
+        fh.write("<br><br>\n")
         for k, v in sheet_data["equity_curve"].items():
             fh.write("================\n")
             fh.write(f"{k:20}: {v}<br>\n")
 
-        fh.write("cross_markets\n")
+        fh.write("cross_markets<br>\n")
         for cm in sheet_data["cross_markets"]:
-            for k, v in cm.items():
-                fh.write(f"{k:20}: {v}<br>\n")
+            print(sheet_data.keys())
+            fh.write(f"<img src='{cm['equity_curve_url']}' alt='' border=3 height=100>")
+            # fh.write(f"![image tooltip here]({cm['equity_curve_url']})")
+            # for k, v in cm.items():
+            #    fh.write(f"{k:20}: {v}<br>\n")
+        fh.write("<br><br>\n")
 
         fh.write("MAE\n")
         for k, v in sheet_data["mae"].items():

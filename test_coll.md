@@ -1,5 +1,7 @@
 ---
 layout: default
+title: 'Test Coll'
+permalink: /test_coll/
 ---
 
 {% for pg in site.test_collections %}

@@ -4,7 +4,7 @@ title: Intro
 permalink: /intro/
 ---
 
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js">
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 
 ## ~~Why~~ ~~Goal~~ Purpose
 * Contribute / Give-back

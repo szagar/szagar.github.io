@@ -4,6 +4,7 @@ title: Intro
 permalink: /intro/
 ---
 
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js">
 
 ## ~~Why~~ ~~Goal~~ Purpose
 * Contribute / Give-back
@@ -15,4 +16,14 @@ A →B;
 A →C;
 B →D;
 C →D;
+```
+
+```html
+<div class="mermaid">
+graph TD;
+A-->B;
+A-->C;
+B-->D;
+C-->D;
+</div>
 ```

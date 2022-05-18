@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Intro
+mermaid: true
 permalink: /intro/
 ---
 

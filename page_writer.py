@@ -31,6 +31,7 @@ def front_matter(doc: dict, layout: str):
     sector = lookup_sector(doc["symbol"])
     fm_d = {
         "layout": layout,
+	"output": "true",
         "title": "frontmatter title",
         "name": "frontmatter name",
         "source": doc["source"],

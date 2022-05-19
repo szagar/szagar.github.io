@@ -5,4 +5,6 @@
 layout: home
 ---
 
+edit zts_site/gh-pages
+
 index.markdown

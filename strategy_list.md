@@ -3,6 +3,5 @@ layout: default
 ---
 
 {% for strategy in site.strategies %}
-  {{strategy}}
-  <h3>{{strategy.market}}: {{ strategy.name }} - {{ strategy.strategy_long_name }} - {{strategy.utl}}</h3>
+  <h3>{{strategy.market}}: {{ strategy.strategy_name }} - {{ strategy.strategy_long_name }} - {{strategy.utl}}</h3>
 {% endfor %}

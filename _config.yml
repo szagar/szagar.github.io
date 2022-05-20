@@ -58,3 +58,4 @@ collections:
     output: true
   strategies:
     output: true
+    permalink: /strategies/:path/

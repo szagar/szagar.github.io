@@ -136,7 +136,7 @@ def write_strategy_sheet(sheet_data):
     with open(fn, "w") as fh:
         fh.write("---\n")
         for k, v in sheet_data["front_matter"].items():
-            fh.write(f"{k:20}: {v}\n")
+            fh.write(f"{k:20}: '{v}'\n")
         fh.write("---\n")
 
         fh.write("equity_curve<br>\n")

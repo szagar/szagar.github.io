@@ -31,13 +31,13 @@ def front_matter(doc: dict, layout: str):
     sector = lookup_sector(doc["symbol"])
     fm_d = {
         "layout": layout,
-	"output": "true",
+        "output": "true",
         "title": "frontmatter title",
         "name": "frontmatter name",
         "source": doc["source"],
         "strategy_name": doc["strategy_name"],
-        "strategy_long_name": doc["strategy_long_name"],
-        "market": doc["symbol"],
+        "strategy_long_name": f"'{doc['strategy_long_name']}'",
+        "market": f"'{doc['symbol']}'",
         "sector": sector,
         "style": doc["trade_style"],
         "dayswing": doc["day_swing"],
@@ -49,6 +49,7 @@ def front_matter(doc: dict, layout: str):
         "dpt": doc["process_metrics"]["dpt_applied"],
         "dps": doc["process_metrics"]["dps_applied"],
         "sfb": doc["process_metrics"]["sfb_applied"],
+        "equity_curve_url": doc["backtest"]["equity_curve_url"],
     }
     return fm_d
 
@@ -136,7 +137,7 @@ def write_strategy_sheet(sheet_data):
     with open(fn, "w") as fh:
         fh.write("---\n")
         for k, v in sheet_data["front_matter"].items():
-            fh.write(f"{k:20}: '{v}'\n")
+            fh.write(f"{k:20}: {v}\n")
         fh.write("---\n")
 
         fh.write("equity_curve<br>\n")
@@ -196,7 +197,7 @@ def strategy_sheet(strategy_name: str):
     for doc in strategy.find({"strategy_name": strategy_name}):
         pprint(doc)
         print(f"long_name = {doc['strategy_long_name']}")
-        sheet_data["front_matter"] = front_matter(doc, layout="strategy_sheet")
+        sheet_data["front_matter"] = front_matter(doc, layout="zts")
         sheet_data["equity_curve"] = equity_curve(doc)
         sheet_data["cross_markets"] = cross_markets(doc)
         sheet_data["mae"] = mae(doc)

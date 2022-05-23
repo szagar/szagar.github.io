@@ -59,3 +59,6 @@ collections:
   strategies:
     output: true
     permalink: /strategies/:path/
+  notes:
+    output: true
+    permalink: /notes/:path/

@@ -3,5 +3,5 @@ layout: default
 ---
 
 {% for strategy in site.strategies %}
-  <h3>{{strategy.market}}: {{ strategy.strategy_name }} - {{ strategy.strategy_long_name }} - {{strategy.utl}}</h3>
+  {{ strategy.strategy_long_name }} - <img src='{{strategy.equity_curve_url}}' alt='' border=3 height=100>
 {% endfor %}
